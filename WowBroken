@@ -1,0 +1,89 @@
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+
+
+public class PuzzleInput : MonoBehaviour {
+
+	public InputField.text;
+	//private string sentence;
+
+	//accepts puzzle placed in field
+	//public Text.text;
+
+
+	public void OnSubmitPuzzle (string puzzle)
+	{
+		Debug.Log (puzzle);
+	}
+	void Start()
+	{
+		//input = theString;
+		OnValueChanged(){
+			Accept_Click()
+		}
+
+	}
+	//places puzzle in a counting code
+
+	//count the number of letters without the white spaces. Possible solution below
+		public int CountCharsTheString()
+		{
+		int result = 0;
+
+		if(!string.IsNullOrWhiteSpace(sentence))
+		{
+			charArray = sentence.ToCharArray(); 
+
+			foreach (char character in charArray)
+				result++;
+		}
+
+		else
+		{
+			throw new Unity.ArgumentException("bummer no puzzle and stuff");
+		}
+
+		return result;
+	}
+
+
+
+//generates that number of boxes using the same format as it was input from spaces between words where spaces are 
+//each box goes in a corresponding place in the puzzle
+	void Update()
+	{
+		
+		foreach (char element in result)
+			{
+				Instantiate(LetterBox, Pos, Quarternion.identity);
+			}
+//Code I found which arranges them in a circle but I need them to arrange as the puzzle
+		for (int i = 0; i < numberOfObjects; i++)
+			{
+			float angle = i * Mathf.PI * 2 / numberOfObjects;
+			//Vector3 pos = new Vector3(Mathf.Cos(angle), 0, Mathf.Sin(angle)) * radius;
+			Instantiate (LetterBox, pos, Quaternion.identity)
+		}}
+
+//each letter goes on the back of it's corresponding letter box.
+
+
+//public class LetterClass:MonoBehaviour
+
+/*				void Letter()
+			{
+					if 
+			}*/
+
+//receives input letter from operator (input field on operatoprs terminal
+			//bool
+
+
+//if letter exists in puzzle box connected lights up and plays sound. Waits 3 seconds before turning over
+}
+
+  
+
+
+
